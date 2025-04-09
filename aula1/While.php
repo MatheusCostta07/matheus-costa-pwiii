@@ -81,58 +81,144 @@ echo "<br><br><br>";
 echo "Questão 4";
 echo "<br><br>";
 
+//Insira um valor
+echo "Quantos alunos tem na sala ao todo? ";
+$num_alunos = intval(trim(fgets(STDIN)));
 
-
-
-echo "Calculando a Média da Turma\n";
-
-// Questiona ao usuário quantos alunos fazem parte da turma
-echo "Digite o número de alunos na turma: ";
-$numAlunos = trim(fgets(STDIN));
-
-// Validação para garantir que o número de alunos é um inteiro positivo
-if (!is_numeric($numAlunos) || $numAlunos <= 0) {
-    echo "Número de alunos inválido. Por favor, digite um número inteiro positivo.\n";
-    exit(1); // Encerra o script com código de erro
-}
-
-$totalNotas = 0;
-$contador = 1;
-
-echo "\nPor favor, digite as notas dos alunos:\n";
-
-// Loop while para obter as notas de cada aluno
-while ($contador <= $numAlunos) {
-    echo "Digite a nota do aluno " . $contador . ": ";
-    $nota = trim(fgets(STDIN));
-
-    // Validação para garantir que a nota é um número válido
-    if (!is_numeric($nota)) {
-        echo "Nota inválida. Por favor, digite um valor numérico para a nota.\n";
-        continue; // Volta para o início do loop para pedir a nota novamente
-    }
-
-    $totalNotas += $nota;
+$soma_notas = 0;
+$contador = 0;
+//Soma das notas de todas as pessoas da sala
+while ($contador < $num_alunos) {
     $contador++;
+    echo "Digite a nota do aluno $contador: ";
+    $nota = floatval(trim(fgets(STDIN)));
+    $soma_notas += $nota;
 }
+//Divisão feita pra calcalar a média
+$media = $soma_notas / $num_alunos;
 
-// Calcula a média
-if ($numAlunos > 0) {
-    $media = $totalNotas / $numAlunos;
-    echo "\nA média aritmética da turma é: " . number_format($media, 2) . "\n";
+echo "A média aritmética da turma é: " . number_format($media, 2) . "\n";
+echo "<br><br><br>";
+
+
+//-------------------------------------------------------------------------------------------------------------------------
+
+
+echo "Questão 5";
+echo "<br><br>";
+
+$contador = 0;
+$maior_numero = null;
+//Inseri um número inteiro 
+while ($contador < 10) {
+    $contador++;
+    echo "Digite o número $contador: ";
+    $numero = floatval(trim(fgets(STDIN)));
+//Calculo pra exibir o miaor número
+    if ($maior_numero === null || $numero > $maior_numero) {
+        $maior_numero = $numero;
+    }
+}
+//Exibição dp resultadp
+echo "O maior número digitado foi: " . $maior_numero . "\n";
+echo "<br><br><br>";
+
+
+//-------------------------------------------------------------------------------------------------------------------------
+
+
+echo "Questão 6";
+echo "<br><br>";
+
+$contador = 0;
+$maior1 = null;
+$maior2 = null;
+//Insira um número 
+while ($contador < 10) {
+    $contador++;
+    echo "Digite o número $contador: ";
+    $numero = floatval(trim(fgets(STDIN)));
+// calculo para encontrar o maior número
+    if ($maior1 === null || $numero > $maior1) {
+        $maior2 = $maior1;
+        $maior1 = $numero;
+    } elseif ($maior2 === null || $numero > $maior2) {
+        $maior2 = $numero;
+    }
+}
+//Resultado encontrado e os maiores números são exibidos
+if ($maior1 !== null && $maior2 !== null) {
+    echo "Os dois maiores números digitados foram: $maior1 e $maior2\n";
 } else {
-    echo "\nNão foram inseridas notas para calcular a média.\n";
+    echo "Nenhum número válido foi digitado.\n";
 }
+echo "<br><br><br>";
 
 
+//-------------------------------------------------------------------------------------------------------------------------
 
 
+echo "Questão 7";
+echo "<br><br>";
+
+echo "Escreva o tamanho do lado de um quadrado entre 1 e 20: ";
+$tamanho = intval(trim(fgets(STDIN)));
+
+if ($tamanho < 1 || $tamanho > 20) {
+    echo "Digite um número entre 1 e 20.\n";
+} else {
+
+    $i = 0;
+
+    while ($i < $tamanho) {
+        $j = 0;
+
+        while ($j < $tamanho) {
+            echo "* ";
+            $j++;
+        }
+
+        echo "\n";
+        $i++;
+    }
+}
+echo "<br><br><br>";
 
 
+//-------------------------------------------------------------------------------------------------------------------------
 
 
+echo "Questão 8";
+echo "<br><br>";
 
+echo "Escreva o tamanho do lado de um quadrado entre 1 e 20: ";
+$tamanho = intval(trim(fgets(STDIN)));
 
+if ($tamanho < 1 || $tamanho > 20) {
+    echo "Digite um número entre 1 e 20.\n";
+} else {
+    $i = 0;
 
+    while ($i < $tamanho) {
+        $j = 0;
+
+        if ($i == 0 || $i == $tamanho - 1) {
+            while ($j < $tamanho) {
+                echo "*";
+                $j++;
+            }
+        } else {
+            echo "*";
+            while ($j < $tamanho - 2) {
+                echo " ";
+                $j++;
+            }
+            echo "*";
+        }
+
+        echo "\n";
+        $i++;
+    }
+}
 ?>
 
