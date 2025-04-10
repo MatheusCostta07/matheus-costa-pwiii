@@ -1,10 +1,96 @@
 <?php
+echo "Questão 1";
+echo "<br><br>";
 
-	$valor_um = 10;
-	$valor_dois = 8;
-  $valor_tres = 6;
-  $media = ($valor_um + $valor_dois + $valor_tres)  / 3;
+	$valor1 = 5;
+	$valor2 = 4;
+  	$valor3 = 6;
+  	$media = ($valor1 + $valor2 + $valor3)  / 3;
 
-echo "a média final é igual: ", $media;
+echo "A média final é igual: ", $media;
+echo "<br><br><br>";
+
+
+//---------------------------------------------------------------------------------------------------
+
+
+echo "Questão 2";
+echo "<br><br>";
+
+$var = 90;
+
+$result = (15 / 100) * $var;
+echo $result;
+
+echo "<br><br><br>";
+
+
+//---------------------------------------------------------------------------------------------------
+
+
+echo "Questão 3";
+echo "<br><br>";
+
+$var = 200;
+
+$result = (5/100) * 200;
+$result1 = (50/100) * 200;
+
+echo $result;
+echo "<br>";
+echo $result1;
+echo "<br><br><br>";
+
+
+//---------------------------------------------------------------------------------------------------
+
+
+echo "Questão 4";
+echo "<br><br>";
+
+$valor_um = 4;
+    $valor_dois = 10;
+
+    function calculaQuadrado($num) {
+        $num = $num * $num;
+        return $num;
+    };
+
+    $soma_quadrado = calculaQuadrado($valor_um) + calculaQuadrado($valor_dois);
+ 	
+	echo "A soma dos quadrados corresponde a: ", $soma_quadrado;
+
+echo "<br><br><br>";
+
+
+//---------------------------------------------------------------------------------------------------
+
+
+echo "Questão 5";
+echo "<br><br>";
+
+  $altura = 165;
+    $altura = $altura / 100 //tranforma (m) em (cm)
+    $peso = 60;
+    $imc = $peso / ($altura*$altura);
+
+    echo "O resultado do seu imc foi :", $imc;
+echo "<br><br><br>";
+
+
+//---------------------------------------------------------------------------------------------------
+
+
+echo "Questão 6";
+echo "<br><br>";
+
+$valor_prod = 200;
+
+	$desconto_prod = ($valor_prod/100) * 7 ;
+
+    $valor_final = $valor_prod - $desconto_prod;
 	
+	echo "<p> O valor do produto é de: ", $valor_prod, "</p>";
+    echo "<p> O desconto sera de : ", $desconto_prod, "</p>";
+    echo "<p> O valor final sera de : ", $valor_final, "</p>";
 ?>
